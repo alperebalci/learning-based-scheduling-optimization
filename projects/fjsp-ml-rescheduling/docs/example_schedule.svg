@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Seeded smoke test machine assignment summary</title>
+  <desc id="desc">Bar chart showing operations assigned per machine for a seed 42 smoke run. Counts are 2, 3, 2, 2, 2, and 1 for machines 0 through 5. Makespan is 29.73.</desc>
+  <rect width="900" height="520" fill="white"/>
+  <text x="60" y="55" font-family="Arial, sans-serif" font-size="28" font-weight="700">Seeded Smoke Test Summary</text>
+  <text x="60" y="88" font-family="Arial, sans-serif" font-size="16">Operations assigned per machine · seed=42 · makespan=29.73</text>
+  <line x1="110" y1="420" x2="830" y2="420" stroke="#333" stroke-width="2"/>
+  <line x1="110" y1="130" x2="110" y2="420" stroke="#333" stroke-width="2"/>
+  <g font-family="Arial, sans-serif" font-size="14" fill="#333">
+    <text x="82" y="425">0</text>
+    <text x="82" y="335">1</text>
+    <text x="82" y="245">2</text>
+    <text x="82" y="155">3</text>
+  </g>
+  <g fill="#4f46e5">
+    <rect x="145" y="240" width="70" height="180" rx="6"/>
+    <rect x="260" y="150" width="70" height="270" rx="6"/>
+    <rect x="375" y="240" width="70" height="180" rx="6"/>
+    <rect x="490" y="240" width="70" height="180" rx="6"/>
+    <rect x="605" y="240" width="70" height="180" rx="6"/>
+    <rect x="720" y="330" width="70" height="90" rx="6"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#222">
+    <text x="180" y="448">M0</text><text x="180" y="228">2</text>
+    <text x="295" y="448">M1</text><text x="295" y="138">3</text>
+    <text x="410" y="448">M2</text><text x="410" y="228">2</text>
+    <text x="525" y="448">M3</text><text x="525" y="228">2</text>
+    <text x="640" y="448">M4</text><text x="640" y="228">2</text>
+    <text x="755" y="448">M5</text><text x="755" y="318">1</text>
+  </g>
+  <text x="60" y="495" font-family="Arial, sans-serif" font-size="13" fill="#555">Repository validation example; not a publication-grade benchmark.</text>
+</svg>

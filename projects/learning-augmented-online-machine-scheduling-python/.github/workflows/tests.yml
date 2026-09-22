@@ -1,0 +1,50 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Print numerical stack
+        run: |
+          python - <<'PY'
+          import numpy, sklearn
+          print("numpy", numpy.__version__)
+          print("scikit-learn", sklearn.__version__)
+          PY
+
+      - name: Run scheduling self-test
+        run: python run_learning_augmented_scheduling.py --self-test
+
+      - name: Run regression and exact-oracle tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Run ML prediction and controlled-error scheduling smoke
+        run: |
+          python run_learning_augmented_scheduling.py \
+            --seed 42 \
+            --machines 3 \
+            --jobs 8 \
+            --train-instances 60 \
+            --test-instances 12 \
+            --trees 60 \
+            --sweep-instances 8 \
+            --sweep-jobs 7 \
+            --sigmas 0,0.25,0.8,1.2
