@@ -1,4 +1,23 @@
-# Offline RL for Flexible Job Shop Scheduling
+# Learning-Based Scheduling Optimization
+
+<!-- portfolio-umbrella:start -->
+## Portfolio role
+
+This repository is the primary umbrella repository for this Jors Academy research area. Related projects have been consolidated under `projects/` so the methods, implementations, experiments, and case studies can be maintained and explored from one place.
+
+### Included projects
+
+- [`dqn-job-shop-scheduling`](projects/dqn-job-shop-scheduling/)
+- [`dynamic-automotive-paint-shop-scheduling-rl`](projects/dynamic-automotive-paint-shop-scheduling-rl/)
+- [`fjsp-ml-rescheduling`](projects/fjsp-ml-rescheduling/)
+- [`job-shop-lib-rl-scheduling`](projects/job-shop-lib-rl-scheduling/)
+- [`job-shop-scheduling-ppo`](projects/job-shop-scheduling-ppo/)
+- [`learning-augmented-online-machine-scheduling-python`](projects/learning-augmented-online-machine-scheduling-python/)
+- [`neural-large-neighborhood-search-job-shop-scheduling-pytorch`](projects/neural-large-neighborhood-search-job-shop-scheduling-pytorch/)
+- [`reinforcement-learning-job-shop-scheduling-pytorch`](projects/reinforcement-learning-job-shop-scheduling-pytorch/)
+
+Each consolidated project keeps its own files and a `SOURCE_REPOSITORY.md` provenance record. The snapshot preserves the source repository's default-branch files at consolidation time; repository-level history and metadata remain separate from the snapshot.
+<!-- portfolio-umbrella:end -->
 
 Research-oriented Industrial Engineering / Operations Research benchmark studying whether policies learned **offline from OR-generated scheduling decisions** can approach strong optimization and dispatching baselines without online exploration.
 
