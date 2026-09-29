@@ -1,0 +1,20 @@
+schema_version: 1
+repository: learning-based-scheduling-optimization
+role: umbrella
+axis: methodology
+area: learning-based-scheduling
+status: active
+owner: jorsacademy
+projects:
+  - dqn-job-shop-scheduling
+  - dynamic-automotive-paint-shop-scheduling-rl
+  - fjsp-ml-rescheduling
+  - job-shop-lib-rl-scheduling
+  - job-shop-scheduling-ppo
+  - learning-augmented-online-machine-scheduling-python
+  - neural-large-neighborhood-search-job-shop-scheduling-pytorch
+  - reinforcement-learning-job-shop-scheduling-pytorch
+conventions:
+  provenance_records: true
+  reproducibility_expected: true
+  benchmark_assumptions_documented: true
