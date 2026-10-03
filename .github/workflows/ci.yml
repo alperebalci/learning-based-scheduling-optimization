@@ -26,5 +26,5 @@ jobs:
           python-version: '3.11'
       - run: pip install -e '.[dev,neural]'
       - run: ruff check src tests
-      - run: pytest -q tests/test_phase4.py tests/test_final_evaluation.py
+      - run: pytest -q tests/test_phase4.py tests/test_final_evaluation.py tests/test_adaptive_rescheduling.py
       - run: python -m offline_fjsp.phase4_experiment
