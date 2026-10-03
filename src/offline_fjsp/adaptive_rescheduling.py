@@ -10,7 +10,6 @@ expert acceptability and can shield a DQN policy at inference time.
 from __future__ import annotations
 
 from collections import deque
-from collections.abc import Iterable
 from dataclasses import dataclass
 from itertools import product
 
@@ -558,7 +557,7 @@ class DQNRescheduler:
         )
 
     @staticmethod
-    def action_indices(actions: Iterable[tuple[int, int]]) -> list[int]:
+    def action_indices(actions) -> list[int]:
         return [ACTION_TO_INDEX[tuple(action)] for action in actions]
 
     def _greedy_index(
@@ -603,7 +602,7 @@ class DQNRescheduler:
         reward: float,
         next_state: np.ndarray,
         done: bool,
-        next_actions: Iterable[tuple[int, int]],
+        next_actions,
     ) -> None:
         self.memory.append(
             (
@@ -749,7 +748,7 @@ def aggregate_results(rows: list[dict[str, float]]) -> dict[str, float]:
 def run_adaptive_benchmark(
     *,
     train_episodes: int = 200,
-    eval_seeds: Iterable[int] = range(3000, 3020),
+    eval_seeds=range(3000, 3020),
     seed: int = 0,
 ) -> dict[str, dict[str, float]]:
     X, y = build_constraint_dataset(n_scenarios=50, seed=200)
