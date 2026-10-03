@@ -9,16 +9,16 @@ expert acceptability and can shield a DQN policy at inference time.
 
 from __future__ import annotations
 
-from collections import deque
-from dataclasses import dataclass
-from itertools import product
+import collections
+import dataclasses
+import itertools
 
 import numpy as np
 
 
 FAMILIES = (0, 1)
 IDLE = -1
-ACTIONS = tuple(product((IDLE, 0, 1), repeat=2))
+ACTIONS = tuple(itertools.product((IDLE, 0, 1), repeat=2))
 ACTION_TO_INDEX = {action: idx for idx, action in enumerate(ACTIONS)}
 CONSTRAINT_FEATURES = (
     "idle_with_ready",
@@ -30,7 +30,7 @@ CONSTRAINT_FEATURES = (
 )
 
 
-@dataclass(frozen=True)
+@dataclasses.dataclass(frozen=True)
 class DynamicJob:
     job_id: int
     family: int
@@ -39,7 +39,7 @@ class DynamicJob:
     weight: float
 
 
-@dataclass(frozen=True)
+@dataclasses.dataclass(frozen=True)
 class DisruptionScenario:
     jobs: tuple[DynamicJob, ...]
     availability: np.ndarray
@@ -171,7 +171,7 @@ class AdaptiveJobShopEnv:
                 if self.ready_jobs(machine, family):
                     machine_choices.append(family)
             choices.append(machine_choices)
-        return [tuple(action) for action in product(*choices)]
+        return [tuple(action) for action in itertools.product(*choices)]
 
     def _complete_operation(self, job_id: int) -> None:
         self.stage[job_id] += 1
@@ -536,7 +536,7 @@ class DQNRescheduler:
         self.epsilon = 1.0
         self.epsilon_min = 0.05
         self.epsilon_decay = 0.985
-        self.memory = deque(maxlen=memory_size)
+        self.memory = collections.deque(maxlen=memory_size)
         self.steps = 0
 
         def network():
