@@ -253,6 +253,8 @@ Offline RL earns promotion only when its improvement survives frozen nominal and
 
 The repository is complete for this research question. Graph neural policies, external industrial benchmark datasets, richer disruptions and digital-twin integration should be treated as separate follow-up studies rather than silently expanding this benchmark.
 
+A concrete specification for one such study—**adaptive job-shop rescheduling with explicit feasibility, a learned constraint shield, and RL**—is available in [`docs/follow_up_adaptive_job_shop_constraint_rl.md`](docs/follow_up_adaptive_job_shop_constraint_rl.md).
+
 ## License
 
 MIT
