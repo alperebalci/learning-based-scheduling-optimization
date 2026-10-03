@@ -10,9 +10,9 @@ expert acceptability and can shield a DQN policy at inference time.
 from __future__ import annotations
 
 from collections import deque
+from collections.abc import Iterable
 from dataclasses import dataclass
 from itertools import product
-from typing import Iterable
 
 import numpy as np
 
@@ -333,9 +333,13 @@ def action_features(
             family: env.ready_jobs(machine, family) for family in FAMILIES
         }
         has_ready = any(ready_by_family.values())
-        if choice == IDLE and has_ready and env._availability(machine):
-            if env.busy_remaining[machine] == 0:
-                idle_with_ready += 1
+        if (
+            choice == IDLE
+            and has_ready
+            and env._availability(machine)
+            and env.busy_remaining[machine] == 0
+        ):
+            idle_with_ready += 1
 
         urgent_family = None
         urgent_key = None
@@ -427,7 +431,7 @@ class OperationalConstraintModel:
         steps: int = 900,
         learning_rate: float = 0.08,
         l2: float = 0.01,
-    ) -> "OperationalConstraintModel":
+    ) -> OperationalConstraintModel:
         X = np.asarray(X, dtype=float)
         y = np.asarray(y, dtype=float)
         if X.ndim != 2 or X.shape[1] != len(CONSTRAINT_FEATURES):
