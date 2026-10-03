@@ -1,6 +1,6 @@
 # Follow-up Study: Adaptive Job-Shop Rescheduling with Constraint Shielding and Reinforcement Learning
 
-**Status:** Proposed research extension. This document is a project specification, not an implemented benchmark.
+**Status:** Implemented research extension. Core code is in `src/offline_fjsp/adaptive_rescheduling.py`, the CLI is `src/offline_fjsp/adaptive_experiment.py`, and automated coverage is in `tests/test_adaptive_rescheduling.py`.
 
 ## Research question
 
@@ -161,4 +161,4 @@ Move to larger instances where exact reoptimization is time-limited and report i
 
 ## Relationship to this repository
 
-This study is intentionally a follow-up rather than an expansion of the current feature-complete offline scheduling benchmark. It directly connects the repository's scheduling expertise with constraint learning and safe/hybrid RL while preserving the existing benchmark's frozen research question.
+This study is implemented as a separate extension rather than changing the frozen offline-scheduling research question. It connects the repository's scheduling expertise with dynamic disruptions, learned constraint shielding and masked DQN while keeping the original offline benchmark intact.
