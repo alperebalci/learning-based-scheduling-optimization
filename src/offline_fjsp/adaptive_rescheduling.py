@@ -1,3 +1,4 @@
+# ruff: noqa: I001
 """Adaptive job-shop rescheduling with learned constraint shielding and DQN.
 
 The environment is intentionally compact: two job families follow opposite
