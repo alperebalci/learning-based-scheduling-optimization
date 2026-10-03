@@ -141,6 +141,12 @@ This is especially relevant when small forecast errors can have very different s
 
 ---
 
+## Manufacturing case note
+
+For a concrete sequence-dependent setup vs. delivery-performance example—including DEAP/NSGA-II, CP-SAT/MILP, RL formulation, Pareto evaluation, and hybrid architecture—see [`setup_tardiness_multiobjective_case.md`](setup_tardiness_multiobjective_case.md).
+
+---
+
 ## Algorithm map by scheduling objective
 
 | Objective / challenge | Candidate methods |
