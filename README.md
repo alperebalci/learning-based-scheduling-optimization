@@ -25,6 +25,12 @@ Research-oriented Industrial Engineering / Operations Research benchmark studyin
 
 How sensitive are offline scheduling policies to demonstration quality, and can masked neural CQL/IQL provide a defensible quality/latency trade-off against behavior cloning, strong dispatching rules and CP-SAT on frozen unseen FJSP instances?
 
+## Practitioner method-selection guide
+
+For the broader industrial-engineering question — **when should scheduling use OR, ML, deep learning, reinforcement learning, or hybrid AI?** — see [`docs/method_selection_guide.md`](docs/method_selection_guide.md).
+
+The guide uses an **OR-first, learning-where-justified** decision framework and covers CP-SAT/MILP, supervised prediction, GNNs/attention, DQN/PPO, offline RL (BC/CQL/IQL), neural LNS, and decision-focused learning.
+
 ## Status
 
 **Feature-complete research benchmark.**
