@@ -249,11 +249,26 @@ If behavior cloning matches CQL/IQL, the simpler imitation model is preferred.
 
 Offline RL earns promotion only when its improvement survives frozen nominal and OOD evaluation and justifies its additional complexity.
 
+## Adaptive disruption-aware rescheduling extension
+
+A separate executable extension now studies **dynamic two-machine job-shop rescheduling** under rush-order arrivals, machine unavailability and processing-time slowdowns. Hard feasibility is enforced by action masking; a dependency-free logistic constraint learner recovers synthetic expert acceptability; and a masked PyTorch DQN can be evaluated with or without the learned constraint shield.
+
+Run with the neural extra:
+
+\`\`\`bash
+pip install -e '.[dev,neural]'
+python -m offline_fjsp.adaptive_experiment --train-episodes 200 --eval-episodes 20
+\`\`\`
+
+The experiment reports total modeled cost, weighted tardiness, setup changes, completion rate and shield intervention rate for Minimum Slack, raw DQN and shielded DQN. No RL superiority assumption is built into the benchmark.
+
+Implementation: [\`src/offline_fjsp/adaptive_rescheduling.py\`](src/offline_fjsp/adaptive_rescheduling.py). Method specification: [\`docs/follow_up_adaptive_job_shop_constraint_rl.md\`](docs/follow_up_adaptive_job_shop_constraint_rl.md).
+
 ## Scope boundary
 
 The repository is complete for this research question. Graph neural policies, external industrial benchmark datasets, richer disruptions and digital-twin integration should be treated as separate follow-up studies rather than silently expanding this benchmark.
 
-A concrete specification for one such study—**adaptive job-shop rescheduling with explicit feasibility, a learned constraint shield, and RL**—is available in [`docs/follow_up_adaptive_job_shop_constraint_rl.md`](docs/follow_up_adaptive_job_shop_constraint_rl.md).
+The adaptive job-shop study is implemented in [`src/offline_fjsp/adaptive_rescheduling.py`](src/offline_fjsp/adaptive_rescheduling.py); its detailed methodology remains documented in [`docs/follow_up_adaptive_job_shop_constraint_rl.md`](docs/follow_up_adaptive_job_shop_constraint_rl.md).
 
 ## License
 
