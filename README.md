@@ -31,6 +31,8 @@ For the broader industrial-engineering question — **when should scheduling use
 
 The guide uses an **OR-first, learning-where-justified** decision framework and covers CP-SAT/MILP, supervised prediction, GNNs/attention, DQN/PPO, offline RL (BC/CQL/IQL), neural LNS, and decision-focused learning.
 
+A concrete manufacturing case on **sequence-dependent setup time vs. delivery performance** is documented in [`docs/setup_tardiness_multiobjective_case.md`](docs/setup_tardiness_multiobjective_case.md), including Pareto optimization with NSGA-II, exact/constraint-based baselines, and dynamic RL/hybrid formulations.
+
 ## Status
 
 **Feature-complete research benchmark.**
